@@ -1,3 +1,5 @@
+import configurations.ConfigurationFiles;
+
 public class Main {
 
 //    DDD?
@@ -15,8 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Executor executor = new Executor(new DownloadFile(), new UnzipFile());
+        Executor executor = new Executor(new DownloadFile(), new UnzipFile(), new ConfigurationFiles());
         executor.RunProgram();
-
     }
 }

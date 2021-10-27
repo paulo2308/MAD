@@ -1,15 +1,19 @@
+import configurations.ConfigurationFiles;
+
 public class Executor {
 
     private IDownloadFile iDownloadFile;
     private IUnzipFile iUnzipFile;
-
-    public Executor(IDownloadFile iDownloadFile, IUnzipFile iUnzipFile) {
+    private ConfigurationFiles config;
+    
+    public Executor(IDownloadFile iDownloadFile, IUnzipFile iUnzipFile, ConfigurationFiles config) {
         this.iDownloadFile = iDownloadFile;
         this.iUnzipFile = iUnzipFile;
+        this.config = config;
     }
 
     public void RunProgram() {
-        String addressUrl = "https://transparencia.tce.sp.gov.br/sites/default/files/csv/despesas-itapevi-2021.zip";
+        String addressUrl =  config.getAddressUrl();
         String addressZipFile = "C:\\Users\\paulo\\Documents\\MAD\\src\\main\\resources\\cidade.zip";
         String destinyFolder = "C:\\Users\\paulo\\Documents\\MAD\\src\\main\\resources\\";
 
