@@ -6,11 +6,11 @@ import java.io.FileOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class UnzipFile {
+public class UnzipFile implements IUnzipFile{
 
     private static final int BUFFER = 2048;
 
-    public void descompacta(String enderecoArquivo, String pastaDestino) {
+    public void descompact(String enderecoArquivo, String pastaDestino) {
         try {
 
             String zipFile = enderecoArquivo;

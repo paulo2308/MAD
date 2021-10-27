@@ -4,16 +4,17 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-public class DownloadFile {
+public class DownloadFile implements IDownloadFile{
 
-    private URL url = null;
-    private File file = null;
+    private URL url;
+    private File file;
 
-    public void FazDownload(String enderecoUrl, String enderecoArquivo) {
+    @Override
+    public void DoDownload(String addressUrl, String addressArquivo) {
 
         try {
-            url = new URL(enderecoUrl);
-            file = new File(enderecoArquivo);
+            url = new URL(addressUrl);
+            file = new File(addressArquivo);
 
             FileUtils.copyURLToFile(url, file);
         }
@@ -21,4 +22,5 @@ public class DownloadFile {
             System.out.println("Erro ao tentar baixar arquivo\n" + e.getMessage());
         }
     }
+
 }
